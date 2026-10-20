@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angélica Montiel | Asesora Inmobiliaria Premium</title>
+    
+    <!-- Fuentes de Lujo (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Hoja de Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ==========================================
+       1. BARRA SUPERIOR DE CONTACTO Y REDES
+       ========================================== -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-info">
+                <span>
+                    <i class="fas fa-phone-alt"></i> 
+                    <a href="tel:+584147544303">+58 414-7544303</a>
+                </span>
+                <span>
+                    <i class="fab fa-whatsapp"></i> 
+                    <a href="https://wa.me/584147544303?text=Hola%20Ang%C3%A9lica,%20deseo%20recibir%20asesor%C3%ADa" target="_blank">Escríbeme al WhatsApp</a>
+                </span>
+                <span>
+                    <i class="fas fa-map-marker-alt"></i> 
+                    San Cristóbal, Táchira
+                </span>
+            </div>
+            <div class="top-social">
+                <a href="https://instagram.com/angelicamontiel.verax" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@angelicamontiel669" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       2. ENCABEZADO Y NAVEGACIÓN PRINCIPAL
+       ========================================== -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                ANGÉLICA MONTIEL
+                <span>ASESORA INMOBILIARIA</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#propiedades" class="nav-link">Inmuebles</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#nosotros" class="nav-link">Sobre Mí</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+
+            <a href="https://wa.me/584147544303?text=Hola%20Ang%C3%A9lica,%20deseo%20recibir%20asesor%C3%ADa%20inmobiliaria" class="btn-whatsapp-nav" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp Directo
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       3. HERO SECTION (PORTADA VINO TINTO Y BUSCADOR)
+       ========================================== -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content animate-fade-in">
+            <span class="hero-badge">EXCLUSIVIDAD & CONFIANZA</span>
+            <h1>Encuentra la propiedad perfecta para tu estilo de vida</h1>
+            <p>Asesoría patrimonial integral en compra, venta y alquiler de inmuebles de alto valor en San Cristóbal y sus alrededores.</p>
+            
+            <!-- Buscador Interactivo Flotante -->
+            <div class="search-box">
+                <div class="search-group">
+                    <label for="filter-tipo"><i class="fas fa-building"></i> Tipo de Inmueble</label>
+                    <select id="filter-tipo">
+                        <option value="todos">Todos los inmuebles</option>
+                        <option value="casa">Casa / Quinta</option>
+                        <option value="apartamento">Apartamento</option>
+                        <option value="local">Local / Oficina</option>
+                        <option value="terreno">Terreno</option>
+                    </select>
+                </div>
+                
+                <div class="search-group">
+                    <label for="filter-operacion"><i class="fas fa-key"></i> Operación</label>
+                    <select id="filter-operacion">
+                        <option value="todos">Todas las opciones</option>
+                        <option value="venta">Venta</option>
+                        <option value="alquiler">Alquiler</option>
+                    </select>
+                </div>
+                
+                <div class="search-group">
+                    <label for="filter-habitaciones"><i class="fas fa-bed"></i> Habitaciones</label>
+                    <select id="filter-habitaciones">
+                        <option value="todos">Cualquiera</option>
+                        <option value="1">1 o más</option>
+                        <option value="2">2 o más</option>
+                        <option value="3">3 o más</option>
+                        <option value="4">4 o más</option>
+                    </select>
+                </div>
+                
+                <button class="btn-search" id="btn-buscar">
+                    <i class="fas fa-search"></i> Buscar Inmueble
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       4. CATÁLOGO DE PROPIEDADES (DINÁMICO)
+       ========================================== -->
+    <section class="properties section-padding animate-on-scroll" id="propiedades">
+        <div class="container">
+            <div class="section-title">
+                <span>PORTAFOLIO EXCLUSIVO</span>
+                <h2>Propiedades Destacadas</h2>
+                <p>Selección de inmuebles disponibles evaluados con rigurosidad técnica, comercial y jurídica.</p>
+            </div>
+
+            <!-- Contenedor donde JavaScript carga las tarjetas dinámicamente -->
+            <div class="properties-grid" id="properties-container"></div>
+            
+            <div id="no-results" class="no-results hidden">
+                <p>No se encontraron propiedades que coincidan con tus criterios de búsqueda. Intenta ajustar los filtros.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       VENTANA MODAL PARA GALERÍA DE FOTOS
+       ========================================== -->
+    <div id="galleryModal" class="gallery-modal">
+        <div class="gallery-modal-content animate-zoom">
+            <button class="close-gallery" onclick="closeGallery()">&times;</button>
+            <h3 id="galleryTitle">Título de la Propiedad</h3>
+            
+            <div class="gallery-main-container">
+                <button class="gallery-nav-btn prev-btn" onclick="prevPhoto()">&#10094;</button>
+                <img id="galleryActiveImage" src="" alt="Foto de propiedad">
+                <button class="gallery-nav-btn next-btn" onclick="nextPhoto()">&#10095;</button>
+            </div>
+            
+            <p id="galleryCounter" class="gallery-counter">Foto 1 de 4</p>
+            <div id="galleryThumbnails" class="gallery-thumbnails"></div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       5. SERVICIOS PROFESIONALES (EXPANDIBLES)
+       ========================================== -->
+    <section class="services section-padding bg-alt animate-on-scroll" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <span>SOLUCIONES INTEGRALES</span>
+                <h2>Servicios Inmobiliarios</h2>
+                <p>Haz clic en cualquier tarjeta para conocer los detalles completos y el alcance de cada servicio profesional.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Servicio 1 -->
+                <div class="service-card" onclick="toggleService(this)">
+                    <div class="icon-box"><i class="fas fa-search-dollar"></i></div>
+                    <h3>Compra de Inmuebles</h3>
+                    <p class="service-summary">Búsqueda exhaustiva y negociación inteligente ajustada a tus objetivos financieros.</p>
+                    <div class="service-details">
+                        <p>Te acompañamos desde la selección inicial hasta el cierre definitivo. Analizamos el mercado de San Cristóbal para conseguir opciones que se adapten exactamente a tu presupuesto, evaluando plusvalía, ubicación y estado legal del inmueble para garantizar una inversión inteligente y sin riesgos.</p>
+                    </div>
+                    <span class="expand-hint"><i class="fas fa-plus-circle"></i> Ver más detalles</span>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="service-card" onclick="toggleService(this)">
+                    <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Comercialización & Venta</h3>
+                    <p class="service-summary">Estrategias de marketing de alto impacto para promocionar tu propiedad al valor justo.</p>
+                    <div class="service-details">
+                        <p>Damos máxima visibilidad a tu propiedad mediante difusión en redes sociales, portales especializados y cartera directa de clientes calificados. Realizamos reportes fotográficos profesionales y valoraciones comerciales precisas para concretar la venta en el menor tiempo posible.</p>
+                    </div>
+                    <span class="expand-hint"><i class="fas fa-plus-circle"></i> Ver más detalles</span>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="service-card" onclick="toggleService(this)">
+                    <div class="icon-box"><i class="fas fa-user-shield"></i></div>
+                    <h3>Gestión de Alquileres</h3>
+                    <p class="service-summary">Filtro meticuloso de prospectos e inquilinos junto a convenios debidamente respaldados.</p>
+                    <div class="service-details">
+                        <p>Protegemos tu patrimonio inmobiliario aplicando rigurosos filtros de solvencia, referencias laborales y personales a los aspirantes. Redactamos contratos blindados bajo el marco legal vigente para asegurar la tranquilidad y el cumplimiento puntual del canon.</p>
+                    </div>
+                    <span class="expand-hint"><i class="fas fa-plus-circle"></i> Ver más detalles</span>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="service-card" onclick="toggleService(this)">
+                    <div class="icon-box"><i class="fas fa-file-contract"></i></div>
+                    <h3>Asesoría Documental</h3>
+                    <p class="service-summary">Revisión y orientación jurídica completa en tramitaciones, redacción y firma.</p>
+                    <div class="service-details">
+                        <p>Evitamos sorpresas legales en tus transacciones. Verificamos la tracto sucesiva, solvencias municipales, registros y títulos de propiedad, coordinando de principio a fin la redacción de documentos notariales o registrales hasta la entrega formal.</p>
+                    </div>
+                    <span class="expand-hint"><i class="fas fa-plus-circle"></i> Ver más detalles</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       6. SECCIÓN SOBRE MÍ (PERFIL CON FOTO DINÁMICA)
+       ========================================== -->
+    <section class="profile section-padding animate-on-scroll" id="nosotros">
+        <div class="container profile-container">
+            <div class="profile-image">
+                <img id="profileImageDisplay" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Angélica Montiel - Asesora Inmobiliaria">
+            </div>
+            
+            <div class="profile-text">
+                <span class="badge">CONOCE A TU ASESORA</span>
+                <h2>Angélica Montiel</h2>
+                <h3>Asesora Inmobiliaria & Consultora de Negocios</h3>
+                <p>Mi compromiso es ofrecerte un servicio basado en la transparencia, ética profesional y conocimiento estratégico del mercado de bienes raíces local.</p>
+                <p>Comprender las necesidades únicas de cada cliente me permite asesorarte con la máxima responsabilidad para que vendas, compres o alquiles con total tranquilidad y respaldo.</p>
+                
+                <div class="contact-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Trato personalizado y directo sin intermediarios</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Estudios de mercado y valoración comercial justa</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Acompañamiento seguro en cada paso de la negociación</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       7. CONTACTO DIRECTO
+       ========================================== -->
+    <section class="contact section-padding bg-alt animate-on-scroll" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <span>ATENCIÓN PERSONALIZADA</span>
+                <h2>Ponte en Contacto Directo</h2>
+                <p>¿Tienes alguna duda o quieres conversar sobre un inmueble? Escríbeme directo al WhatsApp o llámame.</p>
+            </div>
+            
+            <div class="contact-wrapper-center">
+                <h3>Hablemos por WhatsApp o Teléfono</h3>
+                <p>La atención es completamente personalizada y directa con Angélica Montiel para garantizarte máxima comodidad y rapidez en la respuesta.</p>
+                
+                <div class="contact-buttons-box">
+                    <a href="https://wa.me/584147544303?text=Hola%20Ang%C3%A9lica,%20deseo%20asesorarme%20contigo" class="btn-whatsapp-nav" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Escribir al WhatsApp (0414-7544303)
+                    </a>
+                    <a href="tel:+584147544303" class="btn-call-direct">
+                        <i class="fas fa-phone-alt"></i> Llamar Directo
+                    </a>
+                </div>
+
+                <div class="social-links-contact">
+                    <strong>Sígueme en mis redes sociales:</strong>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/angelicamontiel.verax" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@angelicamontiel669" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       8. PIE DE PÁGINA Y ACCESO ADMIN OCULTO
+       ========================================== -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Angélica Montiel — Asesora Inmobiliaria. Todos los derechos reservados. <span id="admin-trigger" title="Panel Admin" style="cursor: pointer; opacity: 0.1; font-size: 0.7rem; margin-left: 5px;">⚙️</span></p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+       VENTANA MODAL DEL PANEL DE ADMINISTRACIÓN
+       ========================================== -->
+    <div id="adminModal" class="admin-modal">
+        <div class="admin-modal-content animate-zoom">
+            <button class="close-admin" onclick="closeAdminModal()">&times;</button>
+            
+            <!-- Vista de Ingreso con Contraseña -->
+            <div id="adminLoginView">
+                <h3><i class="fas fa-lock"></i> Acceso Privado</h3>
+                <p>Introduce tu contraseña de administración:</p>
+                <input type="password" id="adminPasswordInput" placeholder="Contraseña secreta">
+                <button class="btn-search" onclick="checkAdminPassword()" style="width:100%; margin-top:10px;">Entrar al Panel</button>
+                <p id="loginError" style="color: #e53e3e; font-size: 0.85rem; margin-top: 10px; display: none;">Contraseña incorrecta</p>
+            </div>
+
+            <!-- Vista del Panel de Gestión -->
+            <div id="adminDashboardView" style="display: none;">
+                <h3><i class="fas fa-cogs"></i> Panel de Gestión en Tiempo Real</h3>
+                
+                <!-- Sección para cambiar foto de perfil desde la galería -->
+                <div class="admin-form-box" style="margin-bottom: 20px; border-left: 4px solid var(--secondary);">
+                    <h4>Cambiar Foto de Perfil ("Sobre Mí")</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">Elige una foto directamente de tu galería o dispositivo:</p>
+                    <input type="file" id="profileImageFile" accept="image/*" style="margin-bottom: 8px; font-size: 0.85rem;">
+                    <button class="btn-search" onclick="uploadProfilePhotoFromGallery()" style="width:100%;">
+                        <i class="fas fa-camera"></i> Actualizar Foto de Perfil
+                    </button>
+                </div>
+
+                <!-- Sección para publicar propiedades con fotos de la galería -->
+                <div class="admin-form-box">
+                    <h4>Publicar Nueva Propiedad</h4>
+                    <input type="text" id="newTitle" placeholder="Título (ej: Quinta Moderna)">
+                    <select id="newTipo">
+                        <option value="casa">Casa / Quinta</option>
+                        <option value="apartamento">Apartamento</option>
+                        <option value="local">Local / Oficina</option>
+                        <option value="terreno">Terreno</option>
+                    </select>
+                    <select id="newOperacion">
+                        <option value="venta">Venta</option>
+                        <option value="alquiler">Alquiler</option>
+                    </select>
+                    <input type="text" id="newPrice" placeholder="Precio (ej: $350,000 o Consultar)">
+                    <input type="text" id="newLocation" placeholder="Ubicación (ej: San Cristóbal, Táchira)">
+                    <input type="number" id="newHabitaciones" placeholder="Número de habitaciones (ej: 3)">
+                    <input type="text" id="newBanos" placeholder="Número de baños (ej: 2)">
+                    <input type="text" id="newMetros" placeholder="Metros cuadrados (ej: 250 m²)">
+                    
+                    <label style="font-size: 0.82rem; font-weight: 600; margin-top: 5px; color: var(--primary);">Selecciona varias fotos de tu galería (puedes elegir varias a la vez):</label>
+                    <input type="file" id="propertyImagesFiles" accept="image/*" multiple style="font-size: 0.85rem; margin-bottom: 5px;">
+                    
+                    <button class="btn-search" onclick="addNewPropertyFromGallery()" style="width:100%; margin-top:10px; background-color: #25D366;">
+                        <i class="fas fa-plus-circle"></i> Publicar con Fotos de Galería
+                    </button>
+                </div>
+
+                <div style="margin-top: 25px; text-align: left;">
+                    <h4>Propiedades Actuales en el Catálogo</h4>
+                    <div id="adminPropertyList" style="max-height: 150px; overflow-y: auto; margin-top: 10px; border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;"></div>
+                </div>
+                
+                <button onclick="resetDefaultProperties()" style="background: #e2e8f0; border: none; padding: 8px 15px; border-radius: 4px; font-size: 0.8rem; margin-top: 15px; cursor: pointer;">Restaurar propiedades iniciales</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       BOTÓN FLOTANTE DE WHATSAPP CON PULSO
+       ========================================== -->
+    <a href="https://wa.me/584147544303?text=Hola%20Ang%C3%A9lica,%20deseo%20solicitar%20asesor%C3%ADa%20inmobiliaria" class="float-wa animate-pulse" target="_blank" aria-label="Contacto directo por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Archivo de JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
